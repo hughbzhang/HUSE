@@ -8,7 +8,7 @@ from utils import plot, calculate_HUSE
 def get_data():
     HJ, model_probs, labels, length_list = [], [], [], []
 
-    with open('summary_clean.csv') as csv_file:
+    with open('../data/summary_clean.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         first_line = True
         for row in csv_reader:

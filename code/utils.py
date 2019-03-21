@@ -120,4 +120,4 @@ def plot(taskname, HJ, model_probs, labels, length_list):
     ax.set_ylabel('Human Judgement')
     axHistx.set_title(taskname)
     plt.tight_layout()
-    plt.savefig(taskname +'.pdf')
+    plt.savefig("../figures/" + taskname +'.pdf')
