@@ -1,0 +1,691 @@
+<!-- HIT template: Survey-v3.0 --><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+<section class="container" id="Survey"><!-- Instructions -->
+<div class="row">
+<div class="col-xs-12 col-md-12">
+<div class="panel panel-primary"><!-- WARNING: the ids "collapseTrigger" and "instructionBody" are being used to enable expand/collapse feature --><a class="panel-heading" href="javascript:void(0);"><strong>Survey Instructions</strong> </a>
+<div class="panel-body">
+<p>For each question, you are given a randomly sampled <b>news article and its headline</b>. Please categorize the comment into one of five buckets based on <strong>how typical it is as a&nbsp;summary headline</strong>. Typicality is a measure of <strong>how often you would see an exact sentence in the corpus</strong>.</p>
+
+<p><strong>In addition, typical news article headlines tend to be grammatical, factual (no added facts / people or omitted major facts).</strong></p>
+
+<p>We have retained the real headlines&nbsp;+ added control questions and will reject your submission if you are too far off from the ground truth.</p>
+
+<p>Note: Longer sentences are rarer than you might otherwise expect.&nbsp;Some sentences have had proper nouns and numbers removed and replaced by "####" and/or <strong>UNKNOWN</strong><unk>&nbsp;tokens. <strong>Do not penalize for any of these features.</strong></unk></p>
+
+<p><strong>DESCRIPTION OF BUCKETS</strong></p>
+
+<p><strong>Very Typical:</strong>&nbsp;You expect to see this all the time.</p>
+
+<p><strong>Typical: </strong>You often expect&nbsp;to see something&nbsp;like this.</p>
+
+<p><strong>Average:&nbsp;</strong>Not surprised to see this, but would not appear as often as a typical comment.</p>
+
+<p><strong>Specific: </strong>This is a correct response, but only in a very specific setting.</p>
+
+<p><strong>Rare: </strong>This is some context where this is a correct response, but you would be surprised to see it.</p>
+
+<p><strong>Invalid</strong>: Not a valid&nbsp;headline. Contains some clearly wrong facts or is grammatically incorrect.​</p>
+</div>
+</div>
+</div>
+</div>
+<!-- End Instructions --><!-- Survey Layout -->
+
+<div class="row" id="workContent">
+<div class="col-sm-8 col-sm-offset-2">
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX0}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT0}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="0" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="0" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="0" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="0" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="0" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="0" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX1}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT1}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="1" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="1" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="1" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="1" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="1" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="1" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX2}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT2}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="2" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="2" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="2" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="2" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="2" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="2" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX3}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT3}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="3" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="3" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="3" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="3" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="3" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="3" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX4}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT4}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="4" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="4" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="4" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="4" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="4" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="4" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX5}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT5}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="5" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="5" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="5" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="5" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="5" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="5" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX6}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT6}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="6" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="6" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="6" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="6" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="6" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="6" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX7}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT7}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="7" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="7" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="7" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="7" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="7" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="7" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX8}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT8}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="8" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="8" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="8" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="8" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="8" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="8" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX9}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT9}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="9" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="9" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="9" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="9" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="9" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="9" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX10}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT10}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="10" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="10" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="10" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="10" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="10" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="10" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX11}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT11}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="11" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="11" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="11" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="11" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="11" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="11" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX12}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT12}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="12" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="12" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="12" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="12" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="12" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="12" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX13}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT13}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="13" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="13" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="13" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="13" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="13" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="13" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX14}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT14}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="14" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="14" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="14" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="14" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="14" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="14" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX15}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT15}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="15" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="15" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="15" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="15" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="15" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="15" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX16}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT16}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="16" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="16" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="16" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="16" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="16" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="16" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX17}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT17}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="17" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="17" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="17" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="17" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="17" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="17" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX18}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT18}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="18" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="18" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="18" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="18" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="18" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="18" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX19}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT19}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="19" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="19" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="19" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="19" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="19" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="19" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX20}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT20}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="20" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="20" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="20" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="20" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="20" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="20" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX21}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT21}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="21" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="21" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="21" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="21" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="21" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="21" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX22}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT22}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="22" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="22" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="22" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="22" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="22" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="22" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX23}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT23}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="23" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="23" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="23" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="23" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="23" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="23" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-body">
+<p>Given a news article: <strong>"${CTX24}"</strong></p>
+
+<p>&nbsp;</p>
+
+<p>How typical is the exact title: <strong>"${OUT24}"</strong>? &nbsp;</p>
+
+<p>Please also take into account whether the title is grammatical, topical, and factually correct.</p>
+
+<p>&nbsp;</p>
+
+<div class="radio"><label><input name="24" required="" type="radio" value="Very Typical" /><strong>Very Typical</strong></label> (You expect to see this all the time.)</div>
+
+<div class="radio"><label><strong><input name="24" required="" type="radio" value="Typical" /></strong><b>Typical</b></label> (You often expect to see something like this.)</div>
+
+<div class="radio"><label><strong><input name="24" required="" type="radio" value="Average" />Average</strong></label> (Not surprised to see this, but would not appear as often as a typical comment.)</div>
+
+<div class="radio"><label><strong><input name="24" required="" type="radio" value="Specific" />Specific</strong></label> (This is a correct response, but only in a very specific setting.)</div>
+
+<div class="radio"><label><strong><input name="24" required="" type="radio" value="Rare" />Rare</strong></label> (This is some context where this is a correct response, but you would be surprised to see it.)</div>
+
+<div class="radio"><label><strong><input name="24" required="" type="radio" value="Invalid" />Invalid</strong></label> (Not a valid headline. Contains some clearly wrong facts or is grammatically incorrect.​)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End Survey Layout --></section>
+<!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries --><!-- External CSS references -->
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" /><!-- Open internal style sheet --><!-- CLose internal javascript -->
+<p>&nbsp;</p>
