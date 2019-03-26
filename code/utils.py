@@ -3,7 +3,6 @@ from IPython import embed
 mpl.use('Agg')
 from matplotlib import pyplot as plt
 from mpl_toolkits.axes_grid1 import make_axes_locatable
-import csv
 import numpy as np
 from sklearn.model_selection import LeaveOneOut
 from sklearn.neighbors import KNeighborsClassifier
@@ -101,10 +100,10 @@ def plot(taskname, HJ, model_probs, labels, length_list):
     divider = make_axes_locatable(ax)
     axHistx = divider.append_axes("top", 0.7, pad=0.0, sharex=ax)
     axHisty = divider.append_axes("right", 0.7, pad=0.0, sharey=ax)
-    axHistx.xaxis.set_tick_params(labelbottom=False,bottom='off')
-    axHistx.yaxis.set_tick_params(labelleft=False,left='off')
-    axHisty.xaxis.set_tick_params(labelbottom=False,bottom='off')
-    axHisty.yaxis.set_tick_params(labelleft=False,left='off')
+    axHistx.xaxis.set_tick_params(labelbottom=False,bottom=False)
+    axHistx.yaxis.set_tick_params(labelleft=False,left=False)
+    axHisty.xaxis.set_tick_params(labelbottom=False,bottom=False)
+    axHisty.yaxis.set_tick_params(labelleft=False,left=False)
     b_subset = np.nonzero(larray)[0]
     r_subset = np.nonzero(larray==False)[0]
     x = np.array(pin)

@@ -1,3 +1,7 @@
+# This is the example file for using the HUSE evaluation
+# You must provide HJ and model_probs as specified (look at utils.py for the signature)
+# A full example (using data directly from the MTurk CSV and doing some auxilary calculations is in full_summarization_example.py
+
 import csv
 import numpy as np
 import collections
